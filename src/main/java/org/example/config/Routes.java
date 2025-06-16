@@ -2,6 +2,7 @@ package org.example.config;
 
 import io.javalin.Javalin;
 import org.example.controller.HelloController;
+import org.example.controller.StatusController;
 
 /**
  * Classe responsável por configurar todas as rotas da aplicação
@@ -22,6 +23,13 @@ public class Routes {
         // Registra a rota GET /hello que chama o hello do controlador
         app.get("/hello", helloController::hello);
 
+        /**
+         * ETAPA 2
+         * Exercicio 02
+         */
+        // Instancia o controlador StatusController
+        StatusController statusController = new StatusController();
+        app.get("/status", statusController::getStatus);
 
     }
 }
