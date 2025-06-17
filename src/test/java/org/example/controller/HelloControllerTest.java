@@ -49,7 +49,7 @@ public class HelloControllerTest {
                 .connectTimeout(Duration.ofSeconds(10))
                 .build();
 
-        System.out.println("🚀 Servidor de teste iniciado em: " + baseUrl);
+        System.out.println("****** Servidor de teste iniciado em: " + baseUrl);
     }
 
     /**

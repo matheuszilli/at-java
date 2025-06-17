@@ -75,7 +75,7 @@ public class TarefaController {
             List<Tarefa> todasTarefas = obterTodasTarefas();
 
             // Log para debug
-            System.out.println("📋 Listando " + todasTarefas.size() + " tarefa(s)");
+            System.out.println("***** Listando " + todasTarefas.size() + " tarefa(s)");
 
             ctx.json(todasTarefas);
 
@@ -108,7 +108,7 @@ public class TarefaController {
             }
 
             // Log para debug
-            System.out.println("🔍 Tarefa encontrada: " + tarefa);
+            System.out.println("***** Tarefa encontrada: " + tarefa);
 
             ctx.json(tarefa);
 
@@ -119,7 +119,7 @@ public class TarefaController {
     }
 
     public static List<Tarefa> obterTodasTarefas() {
-        return new ArrayList<>(tarefas); // Retorna uma cópia para segurança
+        return new ArrayList<>(tarefas);
     }
 
     public static Tarefa buscarPorId(String id) {
