@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class SaudacaoController {
 
-    public void saudacao(Context ctx) {
+    public void saudar(Context ctx) {
         try{
 
             String nome = ctx.pathParam("nome");

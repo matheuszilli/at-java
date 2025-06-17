@@ -1,10 +1,8 @@
 package org.example.controller;
 
 import io.javalin.http.Context;
+import org.example.utils.DateUtils;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,13 +18,9 @@ public class StatusController {
         // Status ok
         response.put("status", "OK");
 
-        // Definir a zona de São Paulo
-        ZoneId saoPauloZone = ZoneId.of("America/Sao_Paulo");
-        ZonedDateTime nowInSaoPaulo = ZonedDateTime.now(saoPauloZone);
-
-        // Timestamp ISO 8601
-        String timstamp = nowInSaoPaulo.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
-        response.put("timestamp", timstamp);
+        // Usa a classe utilitária para obter timestamp (mesma lógica da Tarefa)
+        String timestamp = DateUtils.obterTimestampAtual();
+        response.put("timestamp", timestamp);
 
         ctx.json(response);
     }
