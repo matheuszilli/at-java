@@ -1,6 +1,7 @@
 package org.example.config;
 
 import io.javalin.Javalin;
+import org.example.controller.EchoController;
 import org.example.controller.HelloController;
 import org.example.controller.StatusController;
 
@@ -30,6 +31,14 @@ public class Routes {
         // Instancia o controlador StatusController
         StatusController statusController = new StatusController();
         app.get("/status", statusController::getStatus);
+
+        /**
+         * ETAPA 3
+         * Exercicio 03
+         */
+        // Instancia o controlador EchoController
+        EchoController echoController = new EchoController();
+        app.post("/echo", echoController::echo);
 
     }
 }
