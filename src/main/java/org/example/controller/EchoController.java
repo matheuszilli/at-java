@@ -12,17 +12,14 @@ public class EchoController {
 
             if(!dadosRecebidos.containsKey("mensagem")) {
                 ctx.status(400); // Bad Request
-                ctx.result("Campo 'messagem' é obrigatório.");
+                ctx.json(Map.of("erro", "Campo 'mensagem' é obrigatório"));
                 return;
             }
 
             ctx.json(dadosRecebidos);
         } catch (Exception e) {
             ctx.status(400); // Bad Request
-            ctx.result("Erro ao processar a requisição: " + e.getMessage());
+            ctx.json(Map.of("erro", "Erro interno do servidor ao processar a requisição"));
         }
-
-
-
     }
 }
