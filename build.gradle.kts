@@ -22,6 +22,9 @@ dependencies {
     //Javalin
     implementation("io.javalin:javalin:6.6.0")
 
+    testImplementation("io.javalin:javalin-testtools:6.6.0")
+
+
     // SLF4J - Logger completo (API + implementação)
     implementation("org.slf4j:slf4j-simple:2.0.9")
 
